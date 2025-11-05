@@ -1,0 +1,15 @@
+import java.util.*;
+
+public class MapExample {
+    public static void main(String[] args) {
+        HashMap<String, Integer> marks = new HashMap<>();
+
+        marks.put("Amit", 85);
+        marks.put("Deepanshu", 92);
+        marks.put("Riya", 88);
+
+        for(Map.Entry<String, Integer> entry : marks.entrySet()) {
+            System.out.println(entry.getKey() + " scored " + entry.getValue());
+        }
+    }
+}
