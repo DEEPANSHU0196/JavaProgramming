@@ -1,0 +1,39 @@
+class Queue {
+    int front = 0, rear = -1, size = 0;
+    int[] q = new int[5];
+
+    void enqueue(int x) {
+        if (size == 5)
+            System.out.println("Queue Full");
+        else {
+            rear = (rear + 1) % 5;
+            q[rear] = x;
+            size++;
+        }
+    }
+
+    void dequeue() {
+        if (size == 0)
+            System.out.println("Queue Empty");
+        else {
+            System.out.println("Removed: " + q[front]);
+            front = (front + 1) % 5;
+            size--;
+        }
+    }
+
+    void display() {
+        for (int i = 0; i < size; i++)
+            System.out.print(q[(front + i) % 5] + " ");
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Queue qu = new Queue();
+        qu.enqueue(10);
+        qu.enqueue(20);
+        qu.display();
+        qu.dequeue();
+        qu.display();
+    }
+}
